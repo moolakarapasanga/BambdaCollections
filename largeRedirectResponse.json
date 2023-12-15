@@ -1,0 +1,7 @@
+{
+    "bambda":{
+        "http_history_display_filter":{
+            "bambda":"return requestResponse.hasResponse() &&\r\n       requestResponse.response().statusCode() <= 399 &&\r\n       requestResponse.response().statusCode() >= 300 &&\r\n       requestResponse.response().body().length() > 1000;"
+        }
+    }
+}

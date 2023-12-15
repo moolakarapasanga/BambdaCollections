@@ -1,0 +1,7 @@
+{
+    "bambda":{
+        "http_history_display_filter":{
+            "bambda":"Pattern pattern = Pattern.compile(\"loyalty\\\\s*\");\r\nreturn requestResponse.finalRequest().contains(pattern);"
+        }
+    }
+}

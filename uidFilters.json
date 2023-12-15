@@ -1,0 +1,7 @@
+{
+    "bambda":{
+        "http_history_display_filter":{
+            "bambda":"if(requestResponse.mimeType().equals(MimeType.JSON)) {\r\n  return this.utilities().htmlUtils().decode(requestResponse.response().bodyToString()).contains(\"uid\");\r\n}\r\n\r\nreturn false;"
+        }
+    }
+}

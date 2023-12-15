@@ -1,0 +1,7 @@
+{
+    "bambda":{
+        "http_history_display_filter":{
+            "bambda":"var contentType = requestResponse.response().headerValue(\"Content-Type\");\r\n\r\nif (contentType != null && !contentType.contains(\"application/json\")) {\r\n    String body = requestResponse.response().bodyToString().trim();\r\n\r\n    return body.startsWith( \"{\" ) || body.startsWith( \"[\" );\r\n}\r\n\r\nreturn false;"
+        }
+    }
+}

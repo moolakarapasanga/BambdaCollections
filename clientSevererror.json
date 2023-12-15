@@ -1,0 +1,7 @@
+{
+    "bambda":{
+        "http_history_display_filter":{
+            "bambda":"var response = requestResponse.response();\r\n\r\nif (response.isStatusCodeClass(StatusCodeClass.CLASS_4XX_CLIENT_ERRORS)) {\r\n        requestResponse.annotations().setHighlightColor(HighlightColor.BLUE);\r\n}\r\n\r\nif (response.isStatusCodeClass(StatusCodeClass.CLASS_5XX_SERVER_ERRORS)) {\r\n        requestResponse.annotations().setHighlightColor(HighlightColor.RED);\r\n}\r\n\r\nreturn true;"
+        }
+    }
+}

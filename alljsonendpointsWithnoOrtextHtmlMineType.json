@@ -1,0 +1,7 @@
+{
+    "bambda":{
+        "http_history_display_filter":{
+            "bambda":"if(!requestResponse.hasResponse()) {\r\n\treturn false;\r\n}\r\nvar response = requestResponse.response();\r\nif (response.hasHeader(\"Content-Type\")) {\r\n    if (!response.headerValue(\"Content-Type\").contains(\"text/html\")) {\r\n        return false;\r\n    }\r\n}\r\n\r\nString body = response.bodyToString().trim();\r\nboolean looksLikeJson = body.startsWith(\"{\") || body.startsWith(\"[\");\r\n\r\nif(!looksLikeJson) {\r\n    return false;\r\n}\r\n\r\nreturn true;"
+        }
+    }
+}

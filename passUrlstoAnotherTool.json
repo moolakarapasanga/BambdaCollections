@@ -1,0 +1,7 @@
+{
+    "bambda":{
+        "http_history_display_filter":{
+            "bambda":"if (!requestResponse.request().hasParameter(\"parameter\", HttpParameterType.BODY)) {\r\n\treturn false;\r\n}\r\n\r\nProcessBuilder builder = new ProcessBuilder(\"path-to-process\", \"-\");\r\nProcess process = builder.start();\r\nOutputStream stdin = process.getOutputStream();\r\nBufferedWriter writer = new BufferedWriter(new OutputStreamWriter(stdin));\r\n\r\nwriter.write(requestResponse.request().url());\r\nwriter.flush();\r\nwriter.close();\r\n\r\nreturn true;"
+        }
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "bambda":{
+        "http_history_display_filter":{
+            "bambda":"var path = requestResponse.request().pathWithoutQuery().toLowerCase();\n\nreturn requestResponse.request().isInScope()\r\n "
+        }
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "bambda":{
+        "http_history_display_filter":{
+            "bambda":"var req = requestResponse.request();\r\nvar res = requestResponse.response();\r\nvar paramRegex = Pattern.compile(\"^[a-zA-Z][.\\\\w]{4,}$\");\r\n\r\nif(res == null || res.body().length() == 0) return false;\r\n\r\nif(!req.hasParameters()) return false;\r\n\r\nvar body = res.bodyToString().trim();\r\nvar params = req.parameters();\r\nfor(var param: params) {\r\n    var value = param.value();\r\n    if(param.type() != HttpParameterType.URL)continue;\r\n    if(paramRegex.matcher(value).find()) {\r\n        var start = \"(?:^|[^\\\\w'\\\".])\";\r\n        var end = \"\\\\s*[(]\";\r\n        var callbackRegex = Pattern.compile(start+Pattern.quote(value)+end);\r\n    \tif(callbackRegex.matcher(body).find())return true;\r\n    }\r\n}\r\n\r\nreturn false;"
+        }
+    }
+}

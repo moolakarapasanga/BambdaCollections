@@ -1,0 +1,7 @@
+{
+    "bambda":{
+        "http_history_display_filter":{
+            "bambda":"return requestResponse.contains(\"api\", true)"
+        }
+    }
+}

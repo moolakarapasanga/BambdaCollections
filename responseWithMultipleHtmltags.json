@@ -1,0 +1,7 @@
+{
+    "bambda":{
+        "http_history_display_filter":{
+            "bambda":"return requestResponse.response().statedMimeType() == MimeType.HTML &&\r\n       utilities().byteUtils().countMatches(\r\n       requestResponse.response().body().getBytes(), \"</html>\".getBytes()) > 1;"
+        }
+    }
+}

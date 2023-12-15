@@ -1,0 +1,7 @@
+{
+    "bambda":{
+        "http_history_display_filter":{
+            "bambda":"var body = requestResponse.response().bodyToString().trim();\r\n\r\nif (requestResponse.response().hasHeader(\"authorization\")) {\r\n    var authValue = requestResponse.response().headerValue(\"authorization\");\r\n\r\n    if (authValue.startsWith(\"Bearer ey\")) {\r\n        var tokens = authValue.split(\"\\\\.\");\r\n\r\n        if (tokens.length == 3) {\r\n            var decodedClaims = utilities().base64Utils().decode(tokens[1], Base64DecodingOptions.URL).toString();\r\n\r\n            return decodedClaims.toLowerCase().contains(\"role\");\r\n        }\r\n    }\r\n}\r\n\r\nreturn false;"
+        }
+    }
+}

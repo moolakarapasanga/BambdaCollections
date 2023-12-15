@@ -1,0 +1,7 @@
+{
+    "bambda":{
+        "http_history_display_filter":{
+            "bambda":"if (requestResponse.request().hasParameter(\"pasteurparametName\", HttpParameterType.COOKIE)) {\r\nvar cookieValue = requestResponse\r\n.request()\r\n.parameter(\"idx\", HttpParameterType.COOKIE)\r\n.value();\r\n\r\nreturn cookieValue.contains(\"pasteUrcookieValue\");\r\n}\r\n\r\nreturn false;"
+        }
+    }
+}

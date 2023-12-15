@@ -1,0 +1,7 @@
+{
+    "bambda":{
+        "http_history_display_filter":{
+            "bambda":"if (!requestResponse.request().isInScope()) {\r\n  return false;\r\n}\r\n\r\nvar contentTypeValue = requestResponse.response().headerValue(\"Content-Type\");\r\n\r\nif (contentTypeValue != null) {\r\n   if (contentTypeValue.contains(\"application/javascript\") &&\r\n     contentTypeValue.contains(\"text/javascript\") &&\r\n     contentTypeValue.contains(\"application/x-javascript\")) {\r\n       return false;\r\n   }\r\n}\r\n\r\nreturn true;"
+        }
+    }
+}

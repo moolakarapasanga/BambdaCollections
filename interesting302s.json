@@ -1,0 +1,7 @@
+{
+    "bambda":{
+        "http_history_display_filter":{
+            "bambda":"if (!requestResponse.hasResponse()) {\r\n    return false;\r\n}\r\nvar response = requestResponse.response();\r\nif (response.statusCode() != 302) {\r\n\treturn false;\r\n}\r\nvar bodyWIthoutLinks = response.body().toString().toLowerCase().replaceAll(\"<a.*</a>\", \"\");\r\nvar bodyLength = bodyWIthoutLinks.length();\r\nvar numberOfHrefs = response.body().countMatches(\"href=\", false);\r\nreturn (bodyLength > 1000 || numberOfHrefs > 1);"
+        }
+    }
+}

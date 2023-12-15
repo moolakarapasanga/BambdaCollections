@@ -1,0 +1,7 @@
+{
+    "bambda":{
+        "http_history_display_filter":{
+            "bambda":"var req = requestResponse.request();\r\n\r\nif(!req.hasParameters()) {\r\n\treturn false;\r\n}\r\n\r\nvar types = new HttpParameterType[]{\r\nHttpParameterType.JSON, HttpParameterType.BODY, HttpParameterType.URL\r\n};\r\nfor(HttpParameterType type: types) {\r\n    if(req.hasParameter(\"query\", type)) {\r\n     var value = req.parameterValue(\"query\", type);\r\n        if(type == HttpParameterType.JSON) {\r\n\t    if(value.contains(\"\\\\n\")) {\r\n                return true;\r\n            }\r\n        } else {\r\n            if(value.toLowerCase().contains(\"%0a\")) {\r\n                return true;\r\n            }\r\n        }\r\n    }\r\n}\r\n\r\nreturn false;"
+        }
+    }
+}

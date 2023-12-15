@@ -1,0 +1,7 @@
+{
+    "bambda":{
+        "http_history_display_filter":{
+            "bambda":"if ( !requestResponse.hasResponse()){\n    return false;\n}\n\nreturn true;"
+        }
+    }
+}

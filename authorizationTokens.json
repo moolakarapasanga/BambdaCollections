@@ -1,0 +1,7 @@
+{
+    "bambda":{
+        "http_history_display_filter":{
+            "bambda":"if( !requestResponse.hasResponse() )\r\n{\r\n\treturn false;\r\n}\r\n\r\nif( requestResponse.request().hasHeader(\"Authorization\") )\r\n{\r\n    if( requestResponse.request().headerValue(\"Authorization\").startsWith(\"Bearer\") )\r\n    {\r\n        String possible_token = requestResponse.request().headerValue(\"Authorization\").split(\" \")[1].trim();\r\n        \r\n        if( possible_token != null && possible_token.contains(\".\") ) \r\n        {\r\n            String jwt_header = possible_token.split(\"\\\\.\")[0];\r\n            if( jwt_header != null )\r\n            {\r\n                String decoded_header = utilities().base64Utils().decode(jwt_header).toString();\r\n                String algo = decoded_header.split(\"\\\"alg\\\":\\\"\")[1];\r\n                if( algo.toUpperCase().startsWith(\"RS256\") )\r\n                \treturn true;\r\n            }  \r\n        }\r\n    }\r\n}\r\n\r\nreturn false;"
+        }
+    }
+}

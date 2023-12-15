@@ -1,0 +1,7 @@
+{
+    "bambda":{
+        "http_history_display_filter":{
+            "bambda":"if(!requestResponse.hasResponse() || !requestResponse.response().hasHeader(\"Content-Length\")) {\r\n  return false;\r\n}\n\nint realContentLength = requestResponse.response().body().length();\r\nint declaredContentLength = Integer.parseInt(\r\n     requestResponse.response().headerValue(\"Content-Length\"));\r\nreturn declaredContentLength != realContentLength;"
+        }
+    }
+}

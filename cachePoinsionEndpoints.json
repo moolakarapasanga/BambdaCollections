@@ -1,0 +1,7 @@
+{
+    "bambda":{
+        "http_history_display_filter":{
+            "bambda":"if (!requestResponse.hasResponse()) {\r\n  return false;\r\n}\r\n\r\nvar headers = requestResponse.response().headers();\r\n\r\nfor (var header : headers) {\r\n  if (header.name().toLowerCase().contains(\"cache\") &&\r\n    (header.value().toLowerCase().contains(\"hit\") ||\r\n    header.value().toLowerCase().contains(\"miss\"))) {\r\n    return true;\r\n  }\r\n}\r\n\r\nreturn false;\r\n"
+        }
+    }
+}
